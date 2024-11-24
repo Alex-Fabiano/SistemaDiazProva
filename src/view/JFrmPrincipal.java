@@ -134,12 +134,10 @@ public class JFrmPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMnuUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuUsuariosActionPerformed
+    private void jMnuCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuCadastroActionPerformed
         // TODO add your handling code here:
 
-        JDlgUsuarios jDlgUsuarios = new JDlgUsuarios(null, true);
-        jDlgUsuarios.setVisible(true);
-    }//GEN-LAST:event_jMnuUsuariosActionPerformed
+    }//GEN-LAST:event_jMnuCadastroActionPerformed
 
     private void jMnuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuSairActionPerformed
         // TODO add your handling code here:
@@ -163,14 +161,14 @@ public class JFrmPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         JDlgFuncionario jDlgFuncionario = new JDlgFuncionario(null, true);
         jDlgFuncionario.setVisible(true);
-
     }//GEN-LAST:event_jMnuFuncionarioActionPerformed
 
-    private void jMnuCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuCadastroActionPerformed
+    private void jMnuUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuUsuariosActionPerformed
         // TODO add your handling code here:
 
-
-    }//GEN-LAST:event_jMnuCadastroActionPerformed
+        JDlgUsuarios jDlgUsuarios = new JDlgUsuarios(null, true);
+        jDlgUsuarios.setVisible(true);
+    }//GEN-LAST:event_jMnuUsuariosActionPerformed
 
     /**
      * @param args the command line arguments
