@@ -153,7 +153,6 @@ public class JDlgLogin extends javax.swing.JDialog {
         } else {
 
             JOptionPane.showMessageDialog(null, "Usuário ou senha inválidos.");
-
             principal.setVisible(false);
         }
 

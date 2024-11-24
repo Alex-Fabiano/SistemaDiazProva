@@ -4,13 +4,13 @@
  */
 package view;
 
-
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
+import tools.Util;
 
 /**
  *
@@ -28,7 +28,9 @@ public class JDlgFuncionario extends javax.swing.JDialog {
         initComponents();
         setTitle("Cadastro de Funcionarios");
         setLocationRelativeTo(null);
-        habilitado(false);
+        Util.habilitar(false, jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
+                jTxtEstado_afl, jFmtCep_afl, jFmTelefone_afl, jTxtEmail_afl, jFmtDataNasc_afl, jFmtCpf_afl,
+                jFmtRg_afl, jTxtCargo_afl, jFmtSalario_afl, jFmtDataContratacao_afl, jBtnConfimar, jBtnCancelar);
 
         try {
             mascaraCpfFormatter = new MaskFormatter("###.###.###-##");
@@ -38,7 +40,7 @@ public class JDlgFuncionario extends javax.swing.JDialog {
             maskTelefone = new MaskFormatter("(##)####-####");
             maskCep = new MaskFormatter("#####-###");
         } catch (ParseException ex) {
-            
+
         }
         jFmtCpf_afl.setFormatterFactory(new DefaultFormatterFactory(mascaraCpfFormatter));
         jFmtDataNasc_afl.setFormatterFactory(new DefaultFormatterFactory(mackaraData));
@@ -49,52 +51,8 @@ public class JDlgFuncionario extends javax.swing.JDialog {
         jFmtCep_afl.setFormatterFactory(new DefaultFormatterFactory(maskCep));
     }
 
-    public void habilitado(boolean valor) {
-        jTxtCodigo_afl.setEnabled(false);
-        jTxtNome_afl.setEnabled(valor);
-        jTxtSobrenome_afl.setEnabled(valor);
-        jTxtEndereco_afl.setEnabled(valor);
-        jTxtCidade_afl.setEnabled(valor);
-        jTxtEstado_afl.setEnabled(valor);
-        jFmtCep_afl.setEnabled(valor);
-        jFmTelefone_afl.setEnabled(valor);
-        jTxtEmail_afl.setEnabled(valor);
-        jFmtDataNasc_afl.setEnabled(false);
-        jFmtCpf_afl.setEnabled(valor);
-        jFmtRg_afl.setEnabled(valor);
-        jTxtCargo_afl.setEnabled(valor);
-        jFmtSalario_afl.setEnabled(valor);
-        jFmtDataContratacao_afl.setEnabled(false);
-
-        //
-        jBtnCancelar.setEnabled(valor);
-        jBtnConfimar.setEnabled(valor);
-        //
-        jBtnExcluir.setEnabled(!valor);
-        jBtnAlterar.setEnabled(!valor);
-        jBtnIncluir.setEnabled(!valor);
-        jBtnPesquisar.setEnabled(!valor);
-    }
 
     //  limpar 
-    private void limparC() {
-        jTxtCodigo_afl.setText("");
-        jTxtNome_afl.setText("");
-        jTxtSobrenome_afl.setText("");
-        jTxtEndereco_afl.setText("");
-        jTxtCidade_afl.setText("");
-        jTxtEstado_afl.setText("");
-        jFmtCep_afl.setText("");
-        jFmTelefone_afl.setText("");
-        jTxtEmail_afl.setText("");
-        jFmtDataNasc_afl.setText("");
-        jFmtCpf_afl.setText("");
-        jFmtRg_afl.setText("");
-        jTxtCargo_afl.setText("");
-        jFmtSalario_afl.setText("");
-        jFmtDataContratacao_afl.setText("");
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -434,14 +392,28 @@ public class JDlgFuncionario extends javax.swing.JDialog {
 
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
         // TODO add your handling code here:
-        habilitado(true);
-        limparC();
+
+        Util.habilitar(true, jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
+                jTxtEstado_afl, jFmtCep_afl, jFmTelefone_afl, jTxtEmail_afl, jFmtDataNasc_afl, jFmtCpf_afl,
+                jFmtRg_afl, jTxtCargo_afl, jFmtSalario_afl, jFmtDataContratacao_afl, jBtnConfimar, jBtnCancelar);
+         Util.habilitar(false, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
+        Util.limpar(jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
+                jTxtEstado_afl, jFmtCep_afl, jFmTelefone_afl, jTxtEmail_afl, jFmtDataNasc_afl, jFmtCpf_afl,
+                jFmtRg_afl, jTxtCargo_afl, jFmtSalario_afl, jFmtDataContratacao_afl);
         jTxtNome_afl.grabFocus();
     }//GEN-LAST:event_jBtnIncluirActionPerformed
 
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
         // TODO add your handling code here:
-        habilitado(true);
+     Util.habilitar(true, jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
+                jTxtEstado_afl, jFmtCep_afl, jFmTelefone_afl, jTxtEmail_afl, jFmtDataNasc_afl, jFmtCpf_afl,
+                jFmtRg_afl, jTxtCargo_afl, jFmtSalario_afl, jFmtDataContratacao_afl, jBtnConfimar, jBtnCancelar);;
+                
+                Util.habilitar(false, jBtnIncluir, jBtnExcluir, jBtnPesquisar, jBtnAlterar);
+                
+                 Util.limpar(jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
+                jTxtEstado_afl, jFmtCep_afl, jFmTelefone_afl, jTxtEmail_afl, jFmtDataNasc_afl, jFmtCpf_afl,
+                jFmtRg_afl, jTxtCargo_afl, jFmtSalario_afl, jFmtDataContratacao_afl);
     }//GEN-LAST:event_jBtnAlterarActionPerformed
 
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
@@ -449,39 +421,42 @@ public class JDlgFuncionario extends javax.swing.JDialog {
 
         int resp = JOptionPane.showConfirmDialog(null, "Confirmar Exclusão !", "Deletar registro", JOptionPane.YES_NO_OPTION);
 
-        
-        
+
     }//GEN-LAST:event_jBtnExcluirActionPerformed
 
     private void jBtnConfimarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfimarActionPerformed
         // TODO add your handling code here:
-        habilitado(false);
+       
+        
+        Util.habilitar(false, jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
+                jTxtEstado_afl, jFmtCep_afl, jFmTelefone_afl, jTxtEmail_afl, jFmtDataNasc_afl, jFmtCpf_afl,
+                jFmtRg_afl, jTxtCargo_afl, jFmtSalario_afl, jFmtDataContratacao_afl, jBtnConfimar, jBtnCancelar);
+       
 
-        int resp = JOptionPane.showConfirmDialog(null, "Deseja Salvar ?", "", JOptionPane.YES_NO_OPTION);
-        if (resp == JOptionPane.YES_OPTION) {
-            
-
-            habilitado(false);
-            limparC();
-            JOptionPane.showMessageDialog(null, "Registro feito com sucesso");
-
-        } else {
-            limparC();
-        }
+       Util.habilitar(true, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
+       
+        Util.limpar(jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
+                jTxtEstado_afl, jFmtCep_afl, jFmTelefone_afl, jTxtEmail_afl, jFmtDataNasc_afl, jFmtCpf_afl,
+                jFmtRg_afl, jTxtCargo_afl, jFmtSalario_afl, jFmtDataContratacao_afl);
     }//GEN-LAST:event_jBtnConfimarActionPerformed
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         // TODO add your handling code here:
-    
 
+ Util.habilitar(false, jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
+                jTxtEstado_afl, jFmtCep_afl, jFmTelefone_afl, jTxtEmail_afl, jFmtDataNasc_afl, jFmtCpf_afl,
+                jFmtRg_afl, jTxtCargo_afl, jFmtSalario_afl, jFmtDataContratacao_afl, jBtnConfimar, jBtnCancelar);
+       Util.habilitar(true, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
         // TODO add your handling code here:
-
-     
-
         
+        
+        JDlgFuncionariosPesquisar fp = new JDlgFuncionariosPesquisar(null, true);
+        fp.setVisible(true);
+
+
     }//GEN-LAST:event_jBtnPesquisarActionPerformed
 
     private void jFmtRg_aflActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFmtRg_aflActionPerformed

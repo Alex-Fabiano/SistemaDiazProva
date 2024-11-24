@@ -17,6 +17,7 @@ public class JDlgProdutosPesquisar extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
              setLocationRelativeTo(null);
+                     setTitle("Pesquisar Produto: ");
     }
 
     /**
@@ -50,6 +51,11 @@ public class JDlgProdutosPesquisar extends javax.swing.JDialog {
         JBtnOk1.setBackground(new java.awt.Color(102, 255, 102));
         JBtnOk1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/imagens/confirmar.png"))); // NOI18N
         JBtnOk1.setText("OK");
+        JBtnOk1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBtnOk1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -74,6 +80,11 @@ public class JDlgProdutosPesquisar extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JBtnOk1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnOk1ActionPerformed
+        // TODO add your handling code here:[
+            setVisible(false);
+    }//GEN-LAST:event_JBtnOk1ActionPerformed
 
     /**
      * @param args the command line arguments

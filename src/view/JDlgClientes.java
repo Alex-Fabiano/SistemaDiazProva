@@ -4,7 +4,6 @@
  */
 package view;
 
-
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.text.ParseException;
 import java.util.logging.Level;
@@ -12,6 +11,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
+import tools.Util;
 
 /**
  *
@@ -22,15 +22,18 @@ public class JDlgClientes extends javax.swing.JDialog {
     /**
      * Creates new form jDlgClientes
      */
-    private MaskFormatter mascaraCpfFormatter, mackaraData, mackRg, maskTelefone,maskCep;
-
+    private MaskFormatter mascaraCpfFormatter, mackaraData, mackRg, maskTelefone, maskCep;
+    
     public JDlgClientes(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         setTitle("Cadastro de Cliente");
         setLocationRelativeTo(null);
-        habilitado(false);
-
+        Util.habilitar(false, jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
+                jTxtTelefone_afl, jTxtCep_afl,
+                jFmtCpf_afl, jTxtEmail_afl, jFmtRg_afl, jTxtCep_afl, jTxtEstado_afl, jFmtDataNscT_afl,
+                jTxtProfissao_afl, jChbMasculino_afl, jChbFeminino_afl, jChbAtivo_afl, jBtnCancelar, jBtnConfimar);
+        
         try {
             mascaraCpfFormatter = new MaskFormatter("###.###.###-##");
             mackaraData = new MaskFormatter("##/##/####");
@@ -42,17 +45,17 @@ public class JDlgClientes extends javax.swing.JDialog {
         }
         jFmtCpf_afl.setFormatterFactory(new DefaultFormatterFactory(mascaraCpfFormatter));
         jFmtDataNscT_afl.setFormatterFactory(new DefaultFormatterFactory(mackaraData));
-
+        
         jTxtTelefone_afl.setFormatterFactory(new DefaultFormatterFactory(maskTelefone));
         jFmtRg_afl.setFormatterFactory(new DefaultFormatterFactory(mackRg));
         jTxtCep_afl.setFormatterFactory(new DefaultFormatterFactory(maskCep));
-
+        
     }
-
+    
     public void habilitado(boolean valor) {
         jTxtCodigo_afl.setEnabled(false);
         jTxtNome_afl.setEnabled(valor);
-
+        
         jTxtSobrenome_afl.setEnabled(valor);
         jTxtEndereco_afl.setEnabled(valor);
         jTxtCidade_afl.setEnabled(valor);
@@ -61,7 +64,7 @@ public class JDlgClientes extends javax.swing.JDialog {
         jFmtCpf_afl.setEnabled(valor);
         jTxtEmail_afl.setEnabled(valor);
         jFmtRg_afl.setEnabled(valor);
-
+        
         jTxtCep_afl.setEnabled(valor);
         jTxtEstado_afl.setEnabled(valor);
         jFmtDataNscT_afl.setEnabled(false);
@@ -69,8 +72,7 @@ public class JDlgClientes extends javax.swing.JDialog {
         jChbMasculino_afl.setEnabled(valor);
         jChbFeminino_afl.setEnabled(valor);
         jChbAtivo_afl.setEnabled(valor);
-
-
+        
         jBtnCancelar.setEnabled(valor);
         jBtnConfimar.setEnabled(valor);
         jBtnExcluir.setEnabled(!valor);
@@ -78,7 +80,7 @@ public class JDlgClientes extends javax.swing.JDialog {
         jBtnIncluir.setEnabled(!valor);
         jBtnPesquisar.setEnabled(!valor);
     }
-
+    
     public void limparCampos() {
         jTxtCodigo_afl.setText("");
         jTxtNome_afl.setText("");
@@ -96,13 +98,12 @@ public class JDlgClientes extends javax.swing.JDialog {
         jChbMasculino_afl.setSelected(false);
         jChbFeminino_afl.setSelected(false);
         jChbAtivo_afl.setSelected(false);
-
+        
     }
-    
+
 //    
 //    ERRO TRUNCATION SQL
 //ALTER TABLE clientes_afl MODIFY telefone_afl VARCHAR(15);
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -432,9 +433,12 @@ public class JDlgClientes extends javax.swing.JDialog {
     }//GEN-LAST:event_jFmtRg_aflActionPerformed
 
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
-        // TODO add your handling code here:
+        Util.habilitar(true, jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
+                jTxtTelefone_afl, jTxtCep_afl,
+                jFmtCpf_afl, jTxtEmail_afl, jFmtRg_afl, jTxtCep_afl, jTxtEstado_afl, jFmtDataNscT_afl,
+                jTxtProfissao_afl, jChbMasculino_afl, jChbFeminino_afl, jChbAtivo_afl, jBtnCancelar, jBtnConfimar);        // TODO add your handling code here:
 
-        habilitado(true);
+        Util.habilitar(false, jBtnIncluir, jBtnExcluir, jBtnPesquisar, jBtnAlterar);
     }//GEN-LAST:event_jBtnAlterarActionPerformed
 
     private void jTxtCidade_aflActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtCidade_aflActionPerformed
@@ -444,68 +448,54 @@ public class JDlgClientes extends javax.swing.JDialog {
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
         // TODO add your handling code here:
 
-        habilitado(true);
-        limparCampos();
+        Util.habilitar(true, jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
+                jTxtTelefone_afl, jTxtCep_afl,
+                jFmtCpf_afl, jTxtEmail_afl, jFmtRg_afl, jTxtCep_afl, jTxtEstado_afl, jFmtDataNscT_afl,
+                jTxtProfissao_afl, jChbMasculino_afl, jChbFeminino_afl, jChbAtivo_afl, jBtnCancelar, jBtnConfimar);
+        Util.habilitar(false, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
+        
         jTxtNome_afl.grabFocus();
 
     }//GEN-LAST:event_jBtnIncluirActionPerformed
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         // TODO add your handling code here:
-        habilitado(false);
-
-        int resp = JOptionPane.showConfirmDialog(null, "Deseja Cancelar ?", " ", JOptionPane.YES_NO_OPTION);
-
-        if (resp == JOptionPane.NO_OPTION) {
-            habilitado(true);
-        } else {
-            habilitado(false);
-            limparCampos();
-        }
+        Util.habilitar(false, jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
+                jTxtTelefone_afl, jTxtCep_afl,
+                jFmtCpf_afl, jTxtEmail_afl, jFmtRg_afl, jTxtCep_afl, jTxtEstado_afl, jFmtDataNscT_afl,
+                jTxtProfissao_afl, jChbMasculino_afl, jChbFeminino_afl, jChbAtivo_afl, jBtnCancelar, jBtnConfimar);
+        
+        Util.habilitar(true, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
+        
+        Util.limpar(jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
+                jTxtTelefone_afl, jTxtCep_afl,
+                jFmtCpf_afl, jTxtEmail_afl, jFmtRg_afl, jTxtCep_afl, jTxtEstado_afl, jFmtDataNscT_afl,
+                jTxtProfissao_afl, jChbMasculino_afl, jChbFeminino_afl, jChbAtivo_afl);
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     private void jBtnConfimarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfimarActionPerformed
         // TODO add your handling code here
-        habilitado(false);
-
-        int resp = JOptionPane.showConfirmDialog(null, "Deseja Salvar ?", "", JOptionPane.YES_NO_OPTION);
-        if (resp == JOptionPane.YES_OPTION) {
-           
-//        jChbAtivo_afl.setEnabled(valor);
-// Inserção via DAO
-           
-
-            habilitado(false);
-            limparCampos();
-            JOptionPane.showMessageDialog(null, "Registro feito com sucesso");
-            
-
-           
-
-        } else {
-            limparCampos();
-        }
-
+        
+        Util.habilitar(false, jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
+                jTxtTelefone_afl, jTxtCep_afl,
+                jFmtCpf_afl, jTxtEmail_afl, jFmtRg_afl, jTxtCep_afl, jTxtEstado_afl, jFmtDataNscT_afl,
+                jTxtProfissao_afl, jChbMasculino_afl, jChbFeminino_afl, jChbAtivo_afl, jBtnCancelar, jBtnConfimar);
+        Util.habilitar(true, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
+        
 
     }//GEN-LAST:event_jBtnConfimarActionPerformed
 
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
         // TODO add your handling code here:
-        String codigoStr = JOptionPane.showInputDialog(null, "Entre com o código do cliente:");
-
-        if (codigoStr == null || codigoStr.trim().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Código em branco!");
-            return;
-        }
-
-        
+        JDlgClientesPesquisar cp = new JDlgClientesPesquisar(null, true);
+        cp.setVisible(true);
     }//GEN-LAST:event_jBtnPesquisarActionPerformed
 
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
         // TODO add your handling code here:
 
         int resp = JOptionPane.showConfirmDialog(null, "Confirmar Exclusão!", "Deletar registro", JOptionPane.YES_NO_OPTION);
-
+        
         if (resp == JOptionPane.YES_OPTION) {
             
         }

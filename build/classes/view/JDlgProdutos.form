@@ -56,7 +56,7 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jFmtData_lancamento_afl" max="32767" attributes="0"/>
                           <Component id="jTxtPreco_afl" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jTxtID_afl" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTxtCodico_afl" alignment="0" max="32767" attributes="0"/>
                           <Component id="jTxtDescricao_afl" alignment="0" max="32767" attributes="0"/>
                           <Component id="jTxtQt_afl" alignment="0" max="32767" attributes="0"/>
                           <Component id="jTxtTipo_afl" alignment="1" max="32767" attributes="0"/>
@@ -85,7 +85,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" pref="16" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTxtID_afl" min="-2" pref="30" max="-2" attributes="0"/>
+              <Component id="jTxtCodico_afl" min="-2" pref="30" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               <Component id="jLabel2" min="-2" pref="16" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -130,9 +130,9 @@
         <Property name="text" type="java.lang.String" value="Codigo"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTxtID_afl">
+    <Component class="javax.swing.JTextField" name="jTxtCodico_afl">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTxtID_aflActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTxtCodico_aflActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
@@ -228,7 +228,7 @@
     <Component class="javax.swing.JButton" name="jBtnCancelar">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="ff" red="66" type="rgb"/>
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/imagens/imagens/cancelar.png"/>
@@ -242,7 +242,7 @@
     <Component class="javax.swing.JButton" name="jBtnPesquisar">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="66" red="0" type="rgb"/>
+          <Color blue="ff" green="ff" red="99" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/imagens/imagens/pesquisar.png"/>

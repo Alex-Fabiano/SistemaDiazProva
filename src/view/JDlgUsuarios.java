@@ -4,7 +4,6 @@
  */
 package view;
 
-
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -13,6 +12,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
+import tools.Util;
 
 /**
  *
@@ -33,7 +33,10 @@ public class JDlgUsuarios extends javax.swing.JDialog {
         initComponents();
         setTitle("Cadastro");
         setLocationRelativeTo(null);
-        habilitado(false);
+
+        Util.habilitar(false, jTxtCodico_afl, jTxtNome_afl, jTxtApelido_afl, jFmtCpf_afl,
+                jFmtData_nascimento_afl, jCboMostrarS, jCboNivel_afl, jChbAtivo_afl,
+                jPwfSenha_afl, jBtnConfimar, jBtnCancelar);
         try {
             mascaraCpfFormatter = new MaskFormatter("###.###.###-##");
             mackaraData = new MaskFormatter("##/##/####");
@@ -44,38 +47,7 @@ public class JDlgUsuarios extends javax.swing.JDialog {
         jFmtData_nascimento_afl.setFormatterFactory(new DefaultFormatterFactory(mackaraData));
     }
 
-    public void habilitado(boolean valor) {
-        jTxtCodico_afl.setEnabled(valor);
-        jTxtNome_afl.setEnabled(valor);
-        jTxtApelido_afl.setEnabled(valor);
-        jChbAtivo_afl.setEnabled(valor);
-        jFmtCpf_afl.setEnabled(valor);
-        jFmtData_nascimento_afl.setEnabled(false);
-        jPwfSenha_afl.setEnabled(valor);
-        jCboNivel_afl.setEnabled(valor);
-
-        jCboMostrarS.setEnabled(valor);
-        //
-        jBtnCancelar.setEnabled(valor);
-        jBtnConfimar.setEnabled(valor);
-        //
-        jBtnExcluir.setEnabled(!valor);
-        jBtnAlterar.setEnabled(!valor);
-        jBtnIncluir.setEnabled(!valor);
-        jBtnPesquisar.setEnabled(!valor);
-    }
-
-    public void limparCampos() {
-
-        jTxtCodico_afl.setText("");
-        jTxtNome_afl.setText("");
-        jTxtApelido_afl.setText("");
-        jChbAtivo_afl.setSelected(false);
-        jFmtCpf_afl.setText("");
-        jFmtData_nascimento_afl.setText("");
-        jPwfSenha_afl.setText("");
-        jCboNivel_afl.setSelectedIndex(-1);
-    }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -349,91 +321,55 @@ public class JDlgUsuarios extends javax.swing.JDialog {
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         // TODO add your handling code here:
-        habilitado(false);
-
-        int resp = JOptionPane.showConfirmDialog(null, "Deseja Cancelar ?", " ", JOptionPane.YES_NO_OPTION);
-
-        if (resp == JOptionPane.NO_OPTION) {
-            habilitado(true);
-        } else {
-            habilitado(false);
-            limparCampos();
-        }
+         Util.habilitar(false, jTxtCodico_afl, jTxtNome_afl, jTxtApelido_afl, jFmtCpf_afl, jFmtData_nascimento_afl, jCboMostrarS,
+                jCboNivel_afl, jChbAtivo_afl,
+                jPwfSenha_afl, jBtnConfimar, jBtnCancelar);
+        Util.habilitar(true, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
+        
+        
+         Util.limpar(jTxtCodico_afl, jTxtNome_afl, jTxtApelido_afl, jFmtCpf_afl, jFmtData_nascimento_afl, jCboMostrarS,
+                jCboNivel_afl, jChbAtivo_afl,
+                jPwfSenha_afl);
 
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
         // TODO add your handling code here:
 
-        habilitado(true);
-        limparCampos();
+        jTxtCodico_afl.grabFocus();
+        Util.habilitar(true, jTxtCodico_afl, jTxtNome_afl, jTxtApelido_afl, jFmtCpf_afl, jFmtData_nascimento_afl, jCboMostrarS,
+                jCboNivel_afl, jChbAtivo_afl,
+                jPwfSenha_afl, jBtnConfimar, jBtnCancelar);
+        Util.habilitar(false, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
+        Util.limpar(jTxtCodico_afl, jTxtNome_afl, jTxtApelido_afl, jFmtCpf_afl, jFmtData_nascimento_afl, jCboMostrarS,
+                jCboNivel_afl, jChbAtivo_afl,
+                jPwfSenha_afl);
         jTxtCodico_afl.grabFocus();
     }//GEN-LAST:event_jBtnIncluirActionPerformed
 
     private void jBtnConfimarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfimarActionPerformed
         // TODO add your handling code here:
 
-        int resp = JOptionPane.showConfirmDialog(null, "Deseja Salvar ?", "", JOptionPane.YES_NO_OPTION);
+       Util.habilitar(false, jTxtCodico_afl, jTxtNome_afl, jTxtApelido_afl, jFmtCpf_afl, jFmtData_nascimento_afl, jCboMostrarS,
+                jCboNivel_afl, jChbAtivo_afl,
+                jPwfSenha_afl, jBtnConfimar, jBtnCancelar);
+        Util.habilitar(true, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
         
+         Util.limpar(jTxtCodico_afl, jTxtNome_afl, jTxtApelido_afl, jFmtCpf_afl, jFmtData_nascimento_afl, jCboMostrarS,
+                jCboNivel_afl, jChbAtivo_afl,
+                jPwfSenha_afl);
+
     }//GEN-LAST:event_jBtnConfimarActionPerformed
 
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
         // TODO add your handling code here:
 
-       
-        limparCampos();
+       Util.limpar(jTxtCodico_afl, jTxtNome_afl, jTxtApelido_afl, jFmtCpf_afl, jFmtData_nascimento_afl, jCboMostrarS,
+                jCboNivel_afl, jChbAtivo_afl,
+                jPwfSenha_afl);
     }//GEN-LAST:event_jBtnExcluirActionPerformed
 
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
-
-//        String cad = JOptionPane.showInputDialog(null, "Entre com o código:");
-//
-//        if (cad == null || cad.trim().isEmpty()) {
-//            JOptionPane.showMessageDialog(null, "Código em branco !!!!");
-//        } else {
-//            try {
-//                // Converter o código para inteiro
-//                int cod = Integer.valueOf(cad);
-//                UsuariosDAO_afl usuariosDAO = new UsuariosDAO_afl();
-//
-//                UsuariosBean_afl usuariosBean_afl = (UsuariosBean_afl) usuariosDAO.list(cod);
-//
-//                if (usuariosBean_afl != null) {
-//
-//                    String codigo = String.valueOf(usuariosBean_afl.getIdUsuarios_afl());
-//                    jTxtCodico_afl.setText(codigo);
-//                    jTxtNome_afl.setText(usuariosBean_afl.getNome_afl());
-//                    jTxtApelido_afl.setText(usuariosBean_afl.getApelido_afl());
-//                    jFmtCpf_afl.setText(usuariosBean_afl.getCpf_afl());
-////                jTxtData_nascimento_afl.setText(usuario.getDataNascimento_afl());
-//                    jPwfSenha_afl.setText(usuariosBean_afl.getSenha_afl());
-//
-//                    int nivel = usuariosBean_afl.getNivel_afl();
-//                    int itemCount = jCboNivel_afl.getItemCount(); 
-//
-//                    if (nivel >= 0 && nivel < itemCount) {
-//                        jCboNivel_afl.setSelectedIndex(nivel);
-//                    } else {
-//                     
-//                        jCboNivel_afl.setSelectedIndex(0); 
-//                    }
-//
-//             
-//                   if (usuariosBean_afl.getAtivo_afl().equals("S") == true) {
-//                        jChbAtivo_afl.setSelected(true);
-//                    } else {
-//                        jChbAtivo_afl.setSelected(false);
-//                    }
-//                } else {
-//                    JOptionPane.showMessageDialog(null, "Usuário não encontrado!");
-//                }
-//            } catch (NumberFormatException e) {
-//                JOptionPane.showMessageDialog(null, "Código inválido! Por favor, insira um número.");
-//            }
-//
-//            
-//            
-
 
         JDlgUsuariosPesquisar jdlgUserSearch = new JDlgUsuariosPesquisar(null, true);
         jdlgUserSearch.setVisible(true);
@@ -443,7 +379,9 @@ public class JDlgUsuarios extends javax.swing.JDialog {
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
         // TODO add your handling code here:
 
-        habilitado(true);
+        Util.habilitar(true, jTxtCodico_afl, jTxtNome_afl, jTxtApelido_afl, jFmtCpf_afl, jFmtData_nascimento_afl, jCboMostrarS, jCboNivel_afl, jChbAtivo_afl,
+                jPwfSenha_afl, jBtnConfimar, jBtnCancelar);
+        Util.habilitar(false, jBtnIncluir, jBtnExcluir, jBtnPesquisar, jBtnAlterar);
 
 
     }//GEN-LAST:event_jBtnAlterarActionPerformed

@@ -90,6 +90,7 @@ public class JDlgUsuariosPesquisar extends javax.swing.JDialog {
 
     private void JBtnOk1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnOk1ActionPerformed
         // TODO add your handling code here:
+            setVisible(false);
     }//GEN-LAST:event_JBtnOk1ActionPerformed
 
     /**

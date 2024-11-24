@@ -4,8 +4,8 @@
  */
 package view;
 
-
 import javax.swing.JOptionPane;
+import tools.Util;
 
 /**
  *
@@ -21,37 +21,9 @@ public class JDlgProdutos extends javax.swing.JDialog {
         initComponents();
         setTitle("Cadastro de produtos");
         setLocationRelativeTo(null);
-        habilitado(false);
-    }
-
-    public void habilitado(boolean valor) {
-        jTxtID_afl.setEnabled(valor);
-        jTxtNome_afl.setEnabled(valor);
-        jTxtDescricao_afl.setEnabled(valor);
-
-        jTxtTipo_afl.setEnabled(valor);
-        jTxtPreco_afl.setEnabled(valor);
-        jTxtQt_afl.setEnabled(valor);
-        jFmtData_lancamento_afl.setEnabled(false);
-
-        //
-        jBtnCancelar.setEnabled(valor);
-        jBtnConfimar.setEnabled(valor);
-        //
-        jBtnExcluir.setEnabled(!valor);
-        jBtnAlterar.setEnabled(!valor);
-        jBtnIncluir.setEnabled(!valor);
-        jBtnPesquisar.setEnabled(!valor);
-    }
-
-    public void limparC() {
-        jTxtID_afl.setText("");
-        jTxtNome_afl.setText("");
-        jTxtDescricao_afl.setText("");
-        jTxtTipo_afl.setText("");
-        jTxtPreco_afl.setText("");
-        jTxtQt_afl.setText("");
-        jFmtData_lancamento_afl.setText("");
+        Util.habilitar(false, jTxtCodico_afl, jTxtNome_afl, jTxtDescricao_afl, jTxtPreco_afl, jTxtQt_afl, jTxtTipo_afl,
+                jFmtData_lancamento_afl,
+                jBtnConfimar, jBtnCancelar);
     }
 
     /**
@@ -69,7 +41,7 @@ public class JDlgProdutos extends javax.swing.JDialog {
 
         jTextField3 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jTxtID_afl = new javax.swing.JTextField();
+        jTxtCodico_afl = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -95,9 +67,9 @@ public class JDlgProdutos extends javax.swing.JDialog {
 
         jLabel1.setText("Codigo");
 
-        jTxtID_afl.addActionListener(new java.awt.event.ActionListener() {
+        jTxtCodico_afl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTxtID_aflActionPerformed(evt);
+                jTxtCodico_aflActionPerformed(evt);
             }
         });
 
@@ -158,7 +130,7 @@ public class JDlgProdutos extends javax.swing.JDialog {
             }
         });
 
-        jBtnCancelar.setBackground(new java.awt.Color(102, 255, 204));
+        jBtnCancelar.setBackground(new java.awt.Color(204, 204, 204));
         jBtnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/imagens/cancelar.png"))); // NOI18N
         jBtnCancelar.setText("Cancelar");
         jBtnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -167,7 +139,7 @@ public class JDlgProdutos extends javax.swing.JDialog {
             }
         });
 
-        jBtnPesquisar.setBackground(new java.awt.Color(0, 102, 255));
+        jBtnPesquisar.setBackground(new java.awt.Color(153, 255, 255));
         jBtnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/imagens/pesquisar.png"))); // NOI18N
         jBtnPesquisar.setText("Pesquisar");
         jBtnPesquisar.addActionListener(new java.awt.event.ActionListener() {
@@ -212,7 +184,7 @@ public class JDlgProdutos extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jFmtData_lancamento_afl)
                             .addComponent(jTxtPreco_afl, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTxtID_afl, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTxtCodico_afl, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTxtDescricao_afl, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTxtQt_afl, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTxtTipo_afl)
@@ -234,7 +206,7 @@ public class JDlgProdutos extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTxtID_afl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTxtCodico_afl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -282,70 +254,68 @@ public class JDlgProdutos extends javax.swing.JDialog {
     }//GEN-LAST:event_jTxtTipo_aflActionPerformed
 
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
-        // TODO add your handling code here:
 
-        habilitado(true);
-        limparC();
-        jTxtID_afl.grabFocus();
+        // TODO add your handling code here:
+        Util.habilitar(true, jTxtCodico_afl, jTxtNome_afl, jTxtDescricao_afl, jTxtPreco_afl, jTxtQt_afl, jTxtTipo_afl,
+                jFmtData_lancamento_afl,
+                jBtnConfimar, jBtnCancelar);
+        Util.habilitar(false, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
+        Util.limpar(jTxtCodico_afl, jTxtNome_afl, jTxtDescricao_afl, jTxtPreco_afl, jTxtQt_afl, jTxtTipo_afl,
+                jFmtData_lancamento_afl);
+        jTxtCodico_afl.grabFocus();
+
     }//GEN-LAST:event_jBtnIncluirActionPerformed
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         // TODO add your handling code here:
-        habilitado(false);
-
-        int resp = JOptionPane.showConfirmDialog(null, "Deseja Cancelar ?", " ", JOptionPane.YES_NO_OPTION);
-
-        if (resp == JOptionPane.NO_OPTION) {
-            habilitado(true);
-        } else {
-            habilitado(false);
-            limparC();
-        }
+        Util.habilitar(false, jTxtCodico_afl, jTxtNome_afl, jTxtDescricao_afl, jTxtPreco_afl, jTxtQt_afl, jTxtTipo_afl,
+                jFmtData_lancamento_afl,
+                jBtnConfimar, jBtnCancelar);
+        Util.habilitar(true, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
+        Util.limpar(jTxtCodico_afl, jTxtNome_afl, jTxtDescricao_afl, jTxtPreco_afl, jTxtQt_afl, jTxtTipo_afl,
+                jFmtData_lancamento_afl);
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
         // TODO add your handling code here:
 
-        int resp = JOptionPane.showConfirmDialog(null, "Confirmar Exclusão!", "Deletar registro", JOptionPane.YES_NO_OPTION);
-
-        if (resp == JOptionPane.YES_OPTION) {}
-          
-            
-
-        limparC();
+        Util.limpar(jTxtCodico_afl, jTxtNome_afl, jTxtDescricao_afl, jTxtPreco_afl, jTxtQt_afl, jTxtTipo_afl,
+                jFmtData_lancamento_afl);
     }//GEN-LAST:event_jBtnExcluirActionPerformed
 
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
         // TODO add your handling code here:
 
-        String codigoStr = JOptionPane.showInputDialog(null, "Entre com o código do cliente:");
-
-        if (codigoStr == null || codigoStr.trim().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Código em branco!");
-            return;
-        }
+        JDlgProdutosPesquisar ps = new JDlgProdutosPesquisar(null, true);
+        ps.setVisible(true);
 
 
     }//GEN-LAST:event_jBtnPesquisarActionPerformed
 
     private void jBtnConfimarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfimarActionPerformed
         // TODO add your handling code here:
-    
-        limparC();
+        Util.habilitar(false, jTxtCodico_afl, jTxtNome_afl, jTxtDescricao_afl, jTxtPreco_afl, jTxtQt_afl, jTxtTipo_afl,
+                jFmtData_lancamento_afl,
+                jBtnConfimar, jBtnCancelar);
+        Util.habilitar(true, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
     }//GEN-LAST:event_jBtnConfimarActionPerformed
 
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
         // TODO add your handling code here:
-        habilitado(true);
+
+        Util.habilitar(true, jTxtCodico_afl, jTxtNome_afl, jTxtDescricao_afl, jTxtPreco_afl, jTxtQt_afl, jTxtTipo_afl, jFmtData_lancamento_afl,
+                jBtnConfimar, jBtnCancelar);
+
+        Util.habilitar(false, jBtnIncluir, jBtnExcluir, jBtnPesquisar, jBtnAlterar);
     }//GEN-LAST:event_jBtnAlterarActionPerformed
 
     private void jTxtDescricao_aflActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtDescricao_aflActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTxtDescricao_aflActionPerformed
 
-    private void jTxtID_aflActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtID_aflActionPerformed
+    private void jTxtCodico_aflActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtCodico_aflActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTxtID_aflActionPerformed
+    }//GEN-LAST:event_jTxtCodico_aflActionPerformed
 
     /**
      * @param args the command line arguments
@@ -406,8 +376,8 @@ public class JDlgProdutos extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTxtCodico_afl;
     private javax.swing.JTextField jTxtDescricao_afl;
-    private javax.swing.JTextField jTxtID_afl;
     private javax.swing.JTextField jTxtNome_afl;
     private javax.swing.JTextField jTxtPreco_afl;
     private javax.swing.JTextField jTxtQt_afl;
