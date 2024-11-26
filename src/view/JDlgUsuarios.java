@@ -47,8 +47,6 @@ public class JDlgUsuarios extends javax.swing.JDialog {
         jFmtData_nascimento_afl.setFormatterFactory(new DefaultFormatterFactory(mackaraData));
     }
 
-   
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -321,13 +319,12 @@ public class JDlgUsuarios extends javax.swing.JDialog {
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         // TODO add your handling code here:
-         Util.habilitar(false, jTxtCodico_afl, jTxtNome_afl, jTxtApelido_afl, jFmtCpf_afl, jFmtData_nascimento_afl, jCboMostrarS,
+        Util.habilitar(false, jTxtCodico_afl, jTxtNome_afl, jTxtApelido_afl, jFmtCpf_afl, jFmtData_nascimento_afl, jCboMostrarS,
                 jCboNivel_afl, jChbAtivo_afl,
                 jPwfSenha_afl, jBtnConfimar, jBtnCancelar);
         Util.habilitar(true, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
-        
-        
-         Util.limpar(jTxtCodico_afl, jTxtNome_afl, jTxtApelido_afl, jFmtCpf_afl, jFmtData_nascimento_afl, jCboMostrarS,
+
+        Util.limpar(jTxtCodico_afl, jTxtNome_afl, jTxtApelido_afl, jFmtCpf_afl, jFmtData_nascimento_afl, jCboMostrarS,
                 jCboNivel_afl, jChbAtivo_afl,
                 jPwfSenha_afl);
 
@@ -350,12 +347,12 @@ public class JDlgUsuarios extends javax.swing.JDialog {
     private void jBtnConfimarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfimarActionPerformed
         // TODO add your handling code here:
 
-       Util.habilitar(false, jTxtCodico_afl, jTxtNome_afl, jTxtApelido_afl, jFmtCpf_afl, jFmtData_nascimento_afl, jCboMostrarS,
+        Util.habilitar(false, jTxtCodico_afl, jTxtNome_afl, jTxtApelido_afl, jFmtCpf_afl, jFmtData_nascimento_afl, jCboMostrarS,
                 jCboNivel_afl, jChbAtivo_afl,
                 jPwfSenha_afl, jBtnConfimar, jBtnCancelar);
         Util.habilitar(true, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
-        
-         Util.limpar(jTxtCodico_afl, jTxtNome_afl, jTxtApelido_afl, jFmtCpf_afl, jFmtData_nascimento_afl, jCboMostrarS,
+
+        Util.limpar(jTxtCodico_afl, jTxtNome_afl, jTxtApelido_afl, jFmtCpf_afl, jFmtData_nascimento_afl, jCboMostrarS,
                 jCboNivel_afl, jChbAtivo_afl,
                 jPwfSenha_afl);
 
@@ -364,7 +361,9 @@ public class JDlgUsuarios extends javax.swing.JDialog {
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
         // TODO add your handling code here:
 
-       Util.limpar(jTxtCodico_afl, jTxtNome_afl, jTxtApelido_afl, jFmtCpf_afl, jFmtData_nascimento_afl, jCboMostrarS,
+        int confimEx = JOptionPane.showConfirmDialog(null, "Confirmar Exclusão !", "Deletar registro", JOptionPane.YES_NO_OPTION);
+
+        Util.limpar(jTxtCodico_afl, jTxtNome_afl, jTxtApelido_afl, jFmtCpf_afl, jFmtData_nascimento_afl, jCboMostrarS,
                 jCboNivel_afl, jChbAtivo_afl,
                 jPwfSenha_afl);
     }//GEN-LAST:event_jBtnExcluirActionPerformed

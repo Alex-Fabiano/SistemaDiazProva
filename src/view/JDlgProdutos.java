@@ -279,6 +279,8 @@ public class JDlgProdutos extends javax.swing.JDialog {
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
         // TODO add your handling code here:
 
+        int confimEx = JOptionPane.showConfirmDialog(null, "Confirmar Exclusão !", "Deletar registro", JOptionPane.YES_NO_OPTION);
+
         Util.limpar(jTxtCodico_afl, jTxtNome_afl, jTxtDescricao_afl, jTxtPreco_afl, jTxtQt_afl, jTxtTipo_afl,
                 jFmtData_lancamento_afl);
     }//GEN-LAST:event_jBtnExcluirActionPerformed

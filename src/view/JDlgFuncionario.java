@@ -51,7 +51,6 @@ public class JDlgFuncionario extends javax.swing.JDialog {
         jFmtCep_afl.setFormatterFactory(new DefaultFormatterFactory(maskCep));
     }
 
-
     //  limpar 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -396,7 +395,7 @@ public class JDlgFuncionario extends javax.swing.JDialog {
         Util.habilitar(true, jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
                 jTxtEstado_afl, jFmtCep_afl, jFmTelefone_afl, jTxtEmail_afl, jFmtDataNasc_afl, jFmtCpf_afl,
                 jFmtRg_afl, jTxtCargo_afl, jFmtSalario_afl, jFmtDataContratacao_afl, jBtnConfimar, jBtnCancelar);
-         Util.habilitar(false, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
+        Util.habilitar(false, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
         Util.limpar(jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
                 jTxtEstado_afl, jFmtCep_afl, jFmTelefone_afl, jTxtEmail_afl, jFmtDataNasc_afl, jFmtCpf_afl,
                 jFmtRg_afl, jTxtCargo_afl, jFmtSalario_afl, jFmtDataContratacao_afl);
@@ -405,13 +404,13 @@ public class JDlgFuncionario extends javax.swing.JDialog {
 
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
         // TODO add your handling code here:
-     Util.habilitar(true, jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
+        Util.habilitar(true, jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
                 jTxtEstado_afl, jFmtCep_afl, jFmTelefone_afl, jTxtEmail_afl, jFmtDataNasc_afl, jFmtCpf_afl,
                 jFmtRg_afl, jTxtCargo_afl, jFmtSalario_afl, jFmtDataContratacao_afl, jBtnConfimar, jBtnCancelar);;
-                
-                Util.habilitar(false, jBtnIncluir, jBtnExcluir, jBtnPesquisar, jBtnAlterar);
-                
-                 Util.limpar(jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
+
+        Util.habilitar(false, jBtnIncluir, jBtnExcluir, jBtnPesquisar, jBtnAlterar);
+
+        Util.limpar(jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
                 jTxtEstado_afl, jFmtCep_afl, jFmTelefone_afl, jTxtEmail_afl, jFmtDataNasc_afl, jFmtCpf_afl,
                 jFmtRg_afl, jTxtCargo_afl, jFmtSalario_afl, jFmtDataContratacao_afl);
     }//GEN-LAST:event_jBtnAlterarActionPerformed
@@ -426,15 +425,15 @@ public class JDlgFuncionario extends javax.swing.JDialog {
 
     private void jBtnConfimarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfimarActionPerformed
         // TODO add your handling code here:
-       
-        
+
+        int confimEx = JOptionPane.showConfirmDialog(null, "Confirmar Exclusão !", "Deletar registro", JOptionPane.YES_NO_OPTION);
+
         Util.habilitar(false, jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
                 jTxtEstado_afl, jFmtCep_afl, jFmTelefone_afl, jTxtEmail_afl, jFmtDataNasc_afl, jFmtCpf_afl,
                 jFmtRg_afl, jTxtCargo_afl, jFmtSalario_afl, jFmtDataContratacao_afl, jBtnConfimar, jBtnCancelar);
-       
 
-       Util.habilitar(true, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
-       
+        Util.habilitar(true, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
+
         Util.limpar(jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
                 jTxtEstado_afl, jFmtCep_afl, jFmTelefone_afl, jTxtEmail_afl, jFmtDataNasc_afl, jFmtCpf_afl,
                 jFmtRg_afl, jTxtCargo_afl, jFmtSalario_afl, jFmtDataContratacao_afl);
@@ -443,16 +442,15 @@ public class JDlgFuncionario extends javax.swing.JDialog {
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         // TODO add your handling code here:
 
- Util.habilitar(false, jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
+        Util.habilitar(false, jTxtCodigo_afl, jTxtNome_afl, jTxtSobrenome_afl, jTxtEndereco_afl, jTxtCidade_afl,
                 jTxtEstado_afl, jFmtCep_afl, jFmTelefone_afl, jTxtEmail_afl, jFmtDataNasc_afl, jFmtCpf_afl,
                 jFmtRg_afl, jTxtCargo_afl, jFmtSalario_afl, jFmtDataContratacao_afl, jBtnConfimar, jBtnCancelar);
-       Util.habilitar(true, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
+        Util.habilitar(true, jBtnIncluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
         // TODO add your handling code here:
-        
-        
+
         JDlgFuncionariosPesquisar fp = new JDlgFuncionariosPesquisar(null, true);
         fp.setVisible(true);
 

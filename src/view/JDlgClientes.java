@@ -447,9 +447,10 @@ public class JDlgClientes extends javax.swing.JDialog {
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
         // TODO add your handling code here:
 
-        int resp = JOptionPane.showConfirmDialog(null, "Confirmar Exclusão!", "Deletar registro", JOptionPane.YES_NO_OPTION);
+               int confimEx = JOptionPane.showConfirmDialog(null, "Confirmar Exclusão !", "Deletar registro", JOptionPane.YES_NO_OPTION);
+
         
-        if (resp == JOptionPane.YES_OPTION) {
+        if (confimEx== JOptionPane.YES_OPTION) {
             
         }
 
