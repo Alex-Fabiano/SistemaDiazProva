@@ -52,55 +52,8 @@ public class JDlgClientes extends javax.swing.JDialog {
         
     }
     
-    public void habilitado(boolean valor) {
-        jTxtCodigo_afl.setEnabled(false);
-        jTxtNome_afl.setEnabled(valor);
-        
-        jTxtSobrenome_afl.setEnabled(valor);
-        jTxtEndereco_afl.setEnabled(valor);
-        jTxtCidade_afl.setEnabled(valor);
-        jTxtTelefone_afl.setEnabled(valor);
-        jTxtCep_afl.setEnabled(valor);
-        jFmtCpf_afl.setEnabled(valor);
-        jTxtEmail_afl.setEnabled(valor);
-        jFmtRg_afl.setEnabled(valor);
-        
-        jTxtCep_afl.setEnabled(valor);
-        jTxtEstado_afl.setEnabled(valor);
-        jFmtDataNscT_afl.setEnabled(false);
-        jTxtProfissao_afl.setEnabled(valor);
-        jChbMasculino_afl.setEnabled(valor);
-        jChbFeminino_afl.setEnabled(valor);
-        jChbAtivo_afl.setEnabled(valor);
-        
-        jBtnCancelar.setEnabled(valor);
-        jBtnConfimar.setEnabled(valor);
-        jBtnExcluir.setEnabled(!valor);
-        jBtnAlterar.setEnabled(!valor);
-        jBtnIncluir.setEnabled(!valor);
-        jBtnPesquisar.setEnabled(!valor);
-    }
+       
     
-    public void limparCampos() {
-        jTxtCodigo_afl.setText("");
-        jTxtNome_afl.setText("");
-        jTxtSobrenome_afl.setText("");
-        jTxtEndereco_afl.setText("");
-        jTxtCidade_afl.setText("");
-        jTxtTelefone_afl.setText("");
-        jTxtCep_afl.setText("");
-        jFmtCpf_afl.setText("");
-        jTxtEmail_afl.setText("");
-        jFmtRg_afl.setText("");
-        jTxtEstado_afl.setText("");
-        jFmtDataNscT_afl.setText("");
-        jTxtProfissao_afl.setText("");
-        jChbMasculino_afl.setSelected(false);
-        jChbFeminino_afl.setSelected(false);
-        jChbAtivo_afl.setSelected(false);
-        
-    }
-
 //    
 //    ERRO TRUNCATION SQL
 //ALTER TABLE clientes_afl MODIFY telefone_afl VARCHAR(15);

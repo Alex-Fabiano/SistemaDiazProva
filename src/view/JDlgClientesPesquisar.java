@@ -18,6 +18,7 @@ public class JDlgClientesPesquisar extends javax.swing.JDialog {
         initComponents();
              setLocationRelativeTo(null);
                      setTitle("Pesquisar Cliente : ");
+                     
     }
 
     /**
@@ -32,7 +33,7 @@ public class JDlgClientesPesquisar extends javax.swing.JDialog {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         JBtnOk = new javax.swing.JButton();
-        JBtnOk1 = new javax.swing.JButton();
+        JBtnFechar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -58,12 +59,12 @@ public class JDlgClientesPesquisar extends javax.swing.JDialog {
             }
         });
 
-        JBtnOk1.setBackground(new java.awt.Color(102, 255, 102));
-        JBtnOk1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/imagens/confirmar.png"))); // NOI18N
-        JBtnOk1.setText("OK");
-        JBtnOk1.addActionListener(new java.awt.event.ActionListener() {
+        JBtnFechar.setBackground(new java.awt.Color(102, 255, 102));
+        JBtnFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/imagens/confirmar.png"))); // NOI18N
+        JBtnFechar.setText("OK");
+        JBtnFechar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBtnOk1ActionPerformed(evt);
+                JBtnFecharActionPerformed(evt);
             }
         });
 
@@ -76,7 +77,7 @@ public class JDlgClientesPesquisar extends javax.swing.JDialog {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(JBtnOk1)))
+                        .addComponent(JBtnFechar)))
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -89,7 +90,7 @@ public class JDlgClientesPesquisar extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JBtnOk1)
+                .addComponent(JBtnFechar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -106,11 +107,11 @@ public class JDlgClientesPesquisar extends javax.swing.JDialog {
         setVisible(false);
     }//GEN-LAST:event_JBtnOkActionPerformed
 
-    private void JBtnOk1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnOk1ActionPerformed
+    private void JBtnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnFecharActionPerformed
         // TODO add your handling code here:
         
         setVisible(false);
-    }//GEN-LAST:event_JBtnOk1ActionPerformed
+    }//GEN-LAST:event_JBtnFecharActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,8 +156,8 @@ public class JDlgClientesPesquisar extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JBtnFechar;
     private javax.swing.JButton JBtnOk;
-    private javax.swing.JButton JBtnOk1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

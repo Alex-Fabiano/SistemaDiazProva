@@ -40,7 +40,7 @@ public class JDlgLogin extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         JTxtUser = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
-        jFmtfSenha_afl = new javax.swing.JPasswordField();
+        jPwfSenha_afl = new javax.swing.JPasswordField();
         jCboMostrarS = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -57,7 +57,9 @@ public class JDlgLogin extends javax.swing.JDialog {
         });
         jPanel1.add(jBtnCancelar);
 
-        JBtnOk1.setText("Ok");
+        JBtnOk1.setBackground(new java.awt.Color(0, 153, 51));
+        JBtnOk1.setForeground(new java.awt.Color(255, 255, 255));
+        JBtnOk1.setText("OK");
         JBtnOk1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBtnOk1ActionPerformed(evt);
@@ -70,9 +72,15 @@ public class JDlgLogin extends javax.swing.JDialog {
 
         JTxtUser.setText("aluno");
 
-        jFmtfSenha_afl.setText("123");
+        jPwfSenha_afl.setText("123");
+        jPwfSenha_afl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPwfSenha_aflActionPerformed(evt);
+            }
+        });
 
-        jCboMostrarS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/imagens/icons8-visível-24.png"))); // NOI18N
+        jCboMostrarS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/imagens/icons8-visível-24.png")));
+        jCboMostrarS.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/imagens/icons8-invisivel-24.png")));
         jCboMostrarS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCboMostrarSActionPerformed(evt);
@@ -90,28 +98,31 @@ public class JDlgLogin extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(175, 175, 175)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(88, 88, 88)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(JTxtUser)
-                                            .addComponent(jFmtfSenha_afl, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCboMostrarS))
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 54, Short.MAX_VALUE)))
+                                .addGap(44, 44, 44)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(JTxtUser)
+                                                .addComponent(jPwfSenha_afl, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE))
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jCboMostrarS))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(72, 72, 72)
+                                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(75, 75, 75)
+                                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                        .addGap(0, 47, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -119,19 +130,22 @@ public class JDlgLogin extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addGap(3, 3, 3)
+                .addGap(9, 9, 9)
                 .addComponent(JTxtUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jFmtfSenha_afl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCboMostrarS, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jCboMostrarS, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPwfSenha_afl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -142,7 +156,7 @@ public class JDlgLogin extends javax.swing.JDialog {
         // TODO add your handling code here:
 
         String usuario = JTxtUser.getText();
-        String senha = jFmtfSenha_afl.getText();
+        String senha = jPwfSenha_afl.getText();
 
         JFrmPrincipal principal = new JFrmPrincipal();
 
@@ -175,11 +189,18 @@ public class JDlgLogin extends javax.swing.JDialog {
         // TODO add your handling code here:
 
         if (jCboMostrarS.isSelected() == true) {
-            jFmtfSenha_afl.setEchoChar((char) 0);
+            jPwfSenha_afl.setEchoChar((char) 0);
+            jCboMostrarS.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/imagens/icons8-invisivel-24.png")));
+
         } else {
-            jFmtfSenha_afl.setEchoChar('*');
+            jPwfSenha_afl.setEchoChar('*');
+            jCboMostrarS.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/imagens/icons8-visível-24.png")));
         }
     }//GEN-LAST:event_jCboMostrarSActionPerformed
+
+    private void jPwfSenha_aflActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPwfSenha_aflActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPwfSenha_aflActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,11 +249,11 @@ public class JDlgLogin extends javax.swing.JDialog {
     private javax.swing.JTextField JTxtUser;
     private javax.swing.JButton jBtnCancelar;
     private javax.swing.JCheckBox jCboMostrarS;
-    private javax.swing.JPasswordField jFmtfSenha_afl;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPasswordField jPwfSenha_afl;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }
